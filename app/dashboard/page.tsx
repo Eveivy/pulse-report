@@ -66,6 +66,7 @@ const usersData = [
 export default function AdminDashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [activeTab, setActiveTab] = useState('overview');
+  
 
   return (
     <div className="min-h-screen bg-background text-foreground dark:bg-dark dark:text-white">

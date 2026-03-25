@@ -39,7 +39,33 @@ export function LoginForm({
       });
       if (error) throw error;
       // Update this route to redirect to an authenticated route. The user already has an active session.
-      router.push("/protected");
+      // const { data: { user } } = await supabase.auth.getUser();
+
+      // const { data: profile, error: profileError } = await supabase
+      //   .from('profiles')
+      //   .select('*')
+      //   .eq('id', user?.id)
+      //   .single();
+
+      const { data: { user } } = await supabase.auth.getUser()
+
+      if (!user) return
+
+      const { data: profile, error: profileError } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', user.id)
+        .single()
+
+      if (profileError) {
+        console.error(error)
+        return
+      }
+
+
+      console.log(profile)
+
+      // router.push("/dashboard");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {

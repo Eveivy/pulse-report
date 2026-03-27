@@ -43,7 +43,7 @@ export function LoginForm({
         password,
       });
       if (error) throw error;
-        router.push("/dashboard"); 
+        router.push("/fetching-details"); 
 
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");

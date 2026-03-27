@@ -36,9 +36,9 @@ export function useAuth() {
       setProfile(profile)
 
       if (profile.role === 'admin') {
-        router.replace('/dashboard/admin')
+        router.replace('/admin')
       } else {
-        router.replace('/dashboard/agent')
+        router.replace('/agent')
       }
     }
 

@@ -1,19 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
-import { atom, useAtom } from "jotai";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -30,29 +20,6 @@ export function AddAgentForm({
     const router = useRouter();
 
 
-
-    // const handleLogin = async (e: React.FormEvent) => {
-    //     e.preventDefault();
-    //     const supabase = createClient();
-    //     setIsLoading(true);
-    //     setError(null);
-
-    //     try {
-    //         const { error } = await supabase.auth.signInWithPassword({
-    //             email,
-    //             password,
-    //         });
-    //         if (error) throw error;
-    //         router.push("/dashboard");
-
-    //     } catch (error: unknown) {
-    //         setError(error instanceof Error ? error.message : "An error occurred");
-    //     } finally {
-    //         setIsLoading(false);
-    //     }
-    // };
-
-
     const handleCreateAgent = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsLoading(true)
@@ -65,7 +32,17 @@ export function AddAgentForm({
                 body: JSON.stringify({ email, name }),
             })
 
+
+            if (!res.ok) {
+                const text = await res.text();
+                console.log(text)
+
+                throw new Error(text || 'Request failed')
+            }
+
             const data = await res.json()
+
+            // const data = await res.json()
 
             console.log(data)
 

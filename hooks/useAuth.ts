@@ -21,7 +21,7 @@ export function useAuth() {
    
       if (userError || !user) {
         setProfile(null)
-        router.replace('/auth/login')
+        router.replace('/login')
         return
       }
  
@@ -29,7 +29,7 @@ export function useAuth() {
 
       if (!profile) {
         setProfile(null)
-        router.replace('/auth/login')
+        router.replace('/login')
         return
       }
 
@@ -59,7 +59,7 @@ export function useAuth() {
 
 //     //   if (!user || error || !data?.claims) {
 //     //     setProfile(null);
-//     //     redirect("/auth/login");
+//     //     redirect("/login");
 //     //     return
 //     //   }
 
@@ -72,7 +72,7 @@ export function useAuth() {
 //     //   } else if (profile.role === "agent") {
 //     //     redirect("/dashboard/agent");
 //     //   } else {
-//     //     redirect("/auth/login");
+//     //     redirect("/login");
 //     //   }
 //     // }
 
@@ -113,7 +113,7 @@ export function useAuth() {
 //   const result = await loadProfile()
 
 //   if (result.status !== 'authenticated') {
-//     redirect('/auth/login')
+//     redirect('/login')
 //     return
 //   }
 

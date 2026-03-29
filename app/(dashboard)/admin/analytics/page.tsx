@@ -1,3 +1,5 @@
+"use client";
+
 import { 
   LineChart,
   Line,
@@ -22,7 +24,7 @@ const analyticsData = [
 
 
 
-export default function page() {
+export default function AnalyticsPage() {
   return (
     <div className="space-y-6">
                 <h2 className="text-2xl font-bold">Detailed Analytics</h2>

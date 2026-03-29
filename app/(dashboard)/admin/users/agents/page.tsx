@@ -1,3 +1,6 @@
+"use client";
+
+
 import AddAgent from '@/components/add-agent';
 import { useState } from 'react';
 
@@ -9,7 +12,7 @@ const usersData = [
     { id: 5, name: 'Riley Brown', email: 'riley@example.com', status: 'Active', joined: '2024-02-05' },
 ];
 
-export default function page() {
+export default function AgentsPage() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (

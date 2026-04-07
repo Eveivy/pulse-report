@@ -14,6 +14,7 @@ import { useAtomValue } from 'jotai';
 import { profileAtom } from '@/store/auth';
 import { useState } from 'react';
 import Link from 'next/link';
+import { LogoutButton } from './logout-button';
 
 export default function Header() {
     const user = useAtomValue(profileAtom);
@@ -55,9 +56,10 @@ export default function Header() {
                     <button className="rounded-lg p-2 hover:bg-secondary dark:hover:bg-secondary">
                         <Settings className="h-5 w-5" />
                     </button>
-                    <button className="rounded-lg px-4 py-2 text-sm font-medium hover:bg-secondary dark:hover:bg-secondary">
+                    <LogoutButton />
+                    {/* <button className="rounded-lg px-4 py-2 text-sm font-medium hover:bg-secondary dark:hover:bg-secondary">
                         <LogOut className="h-5 w-5" />
-                    </button>
+                    </button> */}
                 </div>
             </div>
 

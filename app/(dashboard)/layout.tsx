@@ -3,7 +3,7 @@
 
 import { useAuth } from '@/hooks/useAuth'
 
-export default function AuthLayout({ children }: Readonly<{
+export default function DashboardLayout({ children }: Readonly<{
     children: React.ReactNode;
 }>) {
     useAuth()

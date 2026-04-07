@@ -25,7 +25,9 @@ export function useAuth() {
         return
       }
  
-      const profile = await getCurrentProfile()
+      const profile = await getCurrentProfile();
+
+      console.log("profile => ", profile)
 
       if (!profile) {
         setProfile(null)

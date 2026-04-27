@@ -1,5 +1,5 @@
 import Header from '@/components/header'
-import SideBar from '@/components/sidebar' 
+import SideBar from '@/components/sidebar'
 
 export default async function AdminLayout({
     children,
@@ -13,9 +13,9 @@ export default async function AdminLayout({
             {/* Header */}
             <Header />
 
-                <main className="flex-1 p-8">
-                    {children}
-                </main>
+            <main className="flex-1 p-8">
+                {children}
+            </main>
             {/* <div className="flex">
                 <SideBar />
 

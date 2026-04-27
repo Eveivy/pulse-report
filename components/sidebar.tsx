@@ -6,8 +6,7 @@ import {
     Activity,
     Clock,
     Database,
-    GitBranch,
-    Icon,
+    GitBranch, 
 } from 'lucide-react';
 import Link from 'next/link';
 
